@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Visualizer.css";
-// import getSize from './getSize';
 
 export default function Visualizer() {
   const randomIntFromFromInterval = (min, max) => {
@@ -8,16 +7,12 @@ export default function Visualizer() {
   };
   const resetArray = (size) => {
     const array1 = [];
-    // let num = 600;
     for (let i = 0; i < size; i++) {
       array1.push(randomIntFromFromInterval(10, 600));
-      // array1.push(num);
-      // num-=10;
     }
 
     return array1;
   };
-  // const {sheight,swidth} = useWindowDimensions();
   let [size, setSize] = useState(10);
   const [array, setArray] = useState(resetArray(size));
 
@@ -27,6 +22,7 @@ export default function Visualizer() {
   //   useEffect(() => {
   //     // setArray();
   //   }, []);
+
   useEffect(() => {});
   const highlightColors = (i, j) => {
     let arr = [];
@@ -47,7 +43,6 @@ export default function Visualizer() {
   };
 
   const bubbleSort = async () => {
-    // debugger;
     let array1 = [...array];
     let k = 0;
     for (let i = 0; i < size; i++) {
@@ -55,16 +50,9 @@ export default function Visualizer() {
         if (array1[i] > array1[j]) {
           await sleep(1000);
           console.log(1 + " this loop " + i);
-          //   setIndex(highlightColors(i, j));
-          //   while (k < 1000000000) k++;
 
           array1 = swapElements(array1, size, i, j);
           setArray(array1);
-          //   setTimeout(() => {
-          //     array1 = swapElements(array1, size, i, j);
-          //     setArray(array1);
-          //     setIndex(highlightColors(-1, -1));
-          //   }, i * 10);
         }
       }
     }
