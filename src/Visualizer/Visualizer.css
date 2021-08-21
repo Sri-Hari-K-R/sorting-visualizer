@@ -11,8 +11,7 @@
 }
 .array-container{
     justify-content: center;
-    max-width: vmax;
-    width:100%;
+    width:1920px;
     height:600px;
     display:flex;
     margin-bottom: 50px;
