@@ -18,33 +18,18 @@ export default function Visualizer() {
 
   let [color, setColor] = useState(true);
   const [index, setIndex] = useState([]);
-
-  //   useEffect(() => {
-  //     // setArray();
-  //   }, []);
-
-  useEffect(() => {});
   const highlightColors = (i, j) => {
     let arr = [];
     arr.push(i);
     arr.push(j);
     return arr;
   };
-  const swapColorClick = (e) => {
-    console.log(e);
-    setIndex(highlightColors(5, 7));
-    setTimeout(() => {
-      setArray(swapElements(array, size, 5, 7));
-      setIndex(highlightColors(-1, -1));
-    }, 300);
-  };
   const sleep = (milliseconds) => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
 
   const bubbleSort = async () => {
-    let array1 = [...array];
-    let k = 0;
+    let array1 = array;
     for (let i = 0; i < size - 1; i++) {
       for (let j = 0; j < size - i - 1; j++) {
         setIndex(highlightColors(j, j + 1));
@@ -58,15 +43,16 @@ export default function Visualizer() {
     }
     // console.log(array1);
     setArray(array1);
+    setIndex(highlightColors(-1, -1));
     return array1;
   };
 
   const swapElements = (array, size, i1, i2) => {
     const array1 = [];
     for (let i = 0; i < size; i++) {
-      if (i == i1) {
+      if (i === i1) {
         array1.push(array[i2]);
-      } else if (i == i2) {
+      } else if (i === i2) {
         array1.push(array[i1]);
       } else {
         array1.push(array[i]);
@@ -82,7 +68,7 @@ export default function Visualizer() {
           {array.map((value, idx) => (
             <div
               className={
-                color == true && (idx === index[0] || idx === index[1])
+                color === true && (idx === index[0] || idx === index[1])
                   ? "blueColor array-bar"
                   : "purpleColor array-bar"
               }
@@ -90,12 +76,9 @@ export default function Visualizer() {
                 height: `${value}px`,
                 width: `${(1500 - size * 2) / size}px`,
               }}
-            >
-              {value}
-            </div>
+            ></div>
           ))}
         </div>
-        <div>{(1500 - size * 2) / size}</div>
         <button
           className="bn3637 bn37"
           onClick={() => {
@@ -104,9 +87,8 @@ export default function Visualizer() {
         >
           Generate new array
         </button>
-        <button className="bn3637 bn37" onClick={(e) => swapColorClick(e)}>
-          Swap Color
-        </button>
+        <br></br>
+        <br></br>
         <button
           className="bn3637 bn37"
           onClick={() => {
@@ -114,9 +96,8 @@ export default function Visualizer() {
             bubbleSort();
           }}
         >
-          Sort
+          Bubble Sort
         </button>
-        <br></br>
         <br></br>
         <br></br>
         <input
@@ -129,7 +110,6 @@ export default function Visualizer() {
             setArray(resetArray(size));
           }}
         ></input>
-        <div>{size}</div>
       </div>
     </>
   );

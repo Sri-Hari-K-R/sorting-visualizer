@@ -1,71 +1,74 @@
-.array-bar{
-    width:10px;
-    margin:1px;
-    float:left;
+.array-bar {
+  width: 10px;
+  margin: 1px;
+  float: left;
 }
-.purpleColor{
-    background-color:#B19CD9;
+.purpleColor {
+  background-color: #b19cd9;
 }
-.blueColor{
-    background-color:Turquoise;
+.yellowColor {
+  background-color: #e5f509;
 }
-.array-container{
-    justify-content: center;
-    width:1920px;
-    height:600px;
-    display:flex;
-    margin-bottom: 50px;
+.blueColor {
+  background-color: Turquoise;
+}
+.array-container {
+  justify-content: center;
+  width: 1920px;
+  height: 600px;
+  display: flex;
+  margin-bottom: 50px;
 }
 /* .contents{
     justify-content: center;
     
 } */
 .slider {
-    -webkit-appearance: none;
-    width: 500px;
-    height: 15px;
-    border-radius: 10px;  
-    background: #c3c1c5;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
+  -webkit-appearance: none;
+  width: 500px;
+  height: 15px;
+  border-radius: 10px;
+  background: #c3c1c5;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
 .slider:hover {
-    opacity: 1;
+  opacity: 1;
 }
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #945dfb;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #945dfb;
+  cursor: pointer;
 }
 .bn3637 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 2rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    backface-visibility: hidden;
-    border: 0.3rem solid transparent;
-    border-radius: 3rem;
-  }
-  
-  .bn37 {
-    border-color: transparent;
-    background-color: #B16CD9;
-    color: #000;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-  }
-    
-  .bn37:hover {
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
+
+.bn37 {
+  border-color: transparent;
+  background-color: #b16cd9;
+  color: #000;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+.bn37:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
