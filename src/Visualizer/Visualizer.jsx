@@ -13,7 +13,7 @@ export default function Visualizer() {
 
     return array1;
   };
-  let [size, setSize] = useState(10);
+  let [size, setSize] = useState(50);
   const [array, setArray] = useState(resetArray(size));
 
   let [color, setColor] = useState(true);
@@ -45,18 +45,19 @@ export default function Visualizer() {
   const bubbleSort = async () => {
     let array1 = [...array];
     let k = 0;
-    for (let i = 0; i < size; i++) {
-      for (let j = i + 1; j < size; j++) {
-        if (array1[i] > array1[j]) {
-          await sleep(1000);
-          console.log(1 + " this loop " + i);
-
-          array1 = swapElements(array1, size, i, j);
+    for (let i = 0; i < size - 1; i++) {
+      for (let j = 0; j < size - i - 1; j++) {
+        setIndex(highlightColors(j, j + 1));
+        if (array1[j] > array1[j + 1]) {
+          await sleep(20);
+          array1 = swapElements(array1, size, j, j + 1);
           setArray(array1);
+          setIndex(highlightColors(-1, -1));
         }
       }
     }
-    console.log(array1);
+    // console.log(array1);
+    setArray(array1);
     return array1;
   };
 
@@ -110,7 +111,7 @@ export default function Visualizer() {
           className="bn3637 bn37"
           onClick={() => {
             console.log("f");
-            setArray(bubbleSort());
+            bubbleSort();
           }}
         >
           Sort
@@ -120,8 +121,8 @@ export default function Visualizer() {
         <br></br>
         <input
           type="range"
-          min="10"
-          max="300"
+          min="50"
+          max="100"
           className="slider"
           onChange={(e) => {
             setSize((size = e.target.value));
